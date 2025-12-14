@@ -8,97 +8,46 @@
 
   <body>
     <p>Cow Grass Lion</p>
-    <button
-      onclick="
-      const randomNumber = Math.random();
+    <button id="btnCow">Cow</button>
+    <button id="btnGrass">Grass</button>
+    <button id="btnLion">Lion</button>
 
-      let computerMove = '';
+    <script>
+      function randomMove() {
+        const r = Math.random();
+        if (r < 1 / 3) return "cow";
+        if (r < 2 / 3) return "grass";
+        return "lion";
+      }
 
-      if (randomNumber >= 0 && randomNumber < 1 / 3){
-       computerMove = 'grass';
-    } else if (randomNumber < 2/3){
-       computerMove ='cow';
-    } else if (randomNumber >= 2/3 && randomNumber < 1){
-       computerMove = 'lion';
-    }
+      function decideResult(player, computer) {
+        if (player === computer) return "It's a tie.";
+        // cow beats grass, grass beats lion, lion beats cow
+        if (
+          (player === "cow" && computer === "grass") ||
+          (player === "grass" && computer === "lion") ||
+          (player === "lion" && computer === "cow")
+        ) {
+          return "You win.";
+        }
+        return "You lose.";
+      }
 
+      function play(player) {
+        const computer = randomMove();
+        const result = decideResult(player, computer);
+        alert(`You picked ${player}. I picked ${computer}. ${result}`);
+      }
 
-
-    let result = '';
-    if (computerMove === 'cow') {
-      result = 'It\'s a tie.' ;
-    } else if (computerMove === 'lion') {
-      result = 'You lose.';
-    } else if (computerMove === 'grass') {
-      result = 'You win.';
-    }
-
-    alert(`You picked cow. I picked ${computerMove}. ${result}`);
-      "
-    >
-      Cow
-    </button>
-
-    <button
-      onclick="
-      const randomNumber = Math.random();
-
-      let computerMove = '';
-
-      if (randomNumber >= 0 && randomNumber < 1 / 3){
-       computerMove = 'grass';
-    } else if (randomNumber < 2/3){
-       computerMove ='cow';
-    } else if (randomNumber >= 2/3 && randomNumber < 1){
-       computerMove = 'lion';
-    }
-
-
-
-    let result = '';
-    if (computerMove === 'cow') {
-      result = 'You lose.' ;
-    } else if (computerMove === 'lion') {
-      result = 'You win.';
-    } else if (computerMove === 'grass') {
-      result = 'It\'s a tie.';
-    }
-
-    alert(`You picked grass. I picked ${computerMove}. ${result}`);
-      "
-    >
-      Grass
-    </button>
-
-    <button
-      onclick="
-      const randomNumber = Math.random();
-
-      let computerMove = '';
-
-      if (randomNumber >= 1/3 && randomNumber < 2 / 3){
-       computerMove = 'grass';
-    } else if (randomNumber < 2/3){
-       computerMove ='cow';
-    } else if (randomNumber >= 2/3 && randomNumber < 1){
-       computerMove = 'lion';
-    }
-
-
-
-    let result = '';
-    if (computerMove === 'cow') {
-      result = 'You win.' ;
-    } else if (computerMove === 'lion') {
-      result = 'It\'s a tie.';
-    } else if (computerMove === 'grass') {
-      result = 'You loss.';
-    }
-
-    alert(`You picked Lion. I picked ${computerMove}. ${result}`);
-      "
-    >
-      Lion
-    </button>
+      document
+        .getElementById("btnCow")
+        .addEventListener("click", () => play("cow"));
+      document
+        .getElementById("btnGrass")
+        .addEventListener("click", () => play("grass"));
+      document
+        .getElementById("btnLion")
+        .addEventListener("click", () => play("lion"));
+    </script>
   </body>
 </html>
