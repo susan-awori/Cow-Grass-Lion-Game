@@ -4,13 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cow Grass Lion</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <p>Cow Grass Lion</p>
-    <button id="btnCow">Cow</button>
-    <button id="btnGrass">Grass</button>
-    <button id="btnLion">Lion</button>
+    <h1>Cow . Grass . Lion</h1>
+    <div id="display-explain" style="margin-top: 20px; font-weight: bold">
+      Choose your move to start
+    </div>
+    <div class="choices">
+      <button id="btnCow">
+        <span class="emoji">🐄</span>
+        Cow
+      </button>
+      <button id="btnGrass">
+        <span class="emoji">🌿</span>
+        Grass
+      </button>
+      <button id="btnLion">
+        <span class="emoji">🦁</span>
+        Lion
+      </button>
+    </div>
+    <div id="result-area">
+      <div class="status-text" id="game-status">Waiting for your move...</div>
+      <div class="outcome-text" id="game-outcome">Good Luck!</div>
+    </div>
     <script src="game.js"></script>
   </body>
 </html>

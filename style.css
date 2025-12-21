@@ -1,0 +1,97 @@
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #e8f5e9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  color: #2e7d32;
+}
+
+h1 {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/*  Button Container */
+.choices {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Button Styling */
+button {
+  background: white;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  width: 110px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #c8e6c9;
+  transition: all 0.1s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #c8e6c9;
+  background-color: #fafafa;
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #c8e6c9;
+}
+
+.emoji {
+  font-size: 2.5rem;
+}
+
+/* Display Explanation Text */
+#display-explain {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+/* Result Display */
+#result-area {
+  background: white;
+  padding: 20px 40px;
+  border-radius: 50px;
+  min-width: 300px;
+  text-align: center;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 2px solid #a5d6a7;
+}
+
+.status-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.outcome-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.win {
+  color: #2e7d32;
+}
+.lose {
+  color: #d32f2f;
+}
+.tie {
+  color: #f57c00;
+}
