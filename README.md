@@ -25,7 +25,7 @@ The game relies on a cyclic food chain logic:
 
 ## 🚀 Live Demo
 
---
+https://susan-awori.github.io/Cow-Grass-Lion-Game/
 
 ## 📥 How to Run Locally
 
